@@ -11,9 +11,10 @@ def containers():
     for _delta in deltas.deltas:
         deployed = _delta.deployedOrPrevious
         current_container = deployed.container
-        restartContainer = deployed.restartContainer
-        if restartContainer and _delta.operation != "NOOP" and (current_container.type in ["jbossdm.Domain","jbossdm.StandaloneServer","jbossdm.Profile"]):
-            result.add(current_container)
+        if deployed.hasProperty('restartContainer'):
+            restartContainer = deployed.restartContainer
+            if restartContainer and _delta.operation != "NOOP" and (current_container.type in ["jbossdm.Domain","jbossdm.StandaloneServer","jbossdm.Profile"]):
+                result.add(current_container)
     return result
 
 
