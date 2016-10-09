@@ -1,6 +1,6 @@
 # Preface #
 
-This document describes the functionality provided by the jbossdm-restarter plugin.
+This document describes the functionality provided by the xld-jbossdm-restarter plugin.
 
 See the **XL Deploy Reference Manual** for background information on XL Deploy and deployment concepts.
 
@@ -21,7 +21,7 @@ See the **XL Deploy Reference Manual** for background information on XL Deploy a
 
 # Overview #
 
-The jbossdm-restarter plugin is a XL Deploy plugin that adds capability for restarting a JBoss domain, standalone server or profile when deploying to it.
+The xld-jbossdm-restarter plugin is a XL Deploy plugin that adds capability for restarting a JBoss domain, standalone server or profile when deploying to it.
 
 ## Requirements
 
