@@ -1,8 +1,7 @@
 language: java
 notifications:
-  hipchat:
-    rooms:
-      secure: NO9e2g/3E+1h7/1qu3L7jAGhIWo6Roz9kj56dXMdTUvA8Dz6lCkLgtMbEvhROOi+XZdBYcZ2sF70dq+Q1R25GBF0niPhzMxYIoGD1+2wIt1SBKqIUfEz1e9jX0NaVda1Qgcj0Hb6qStJYn/zt7dRbUd8NuRm0uD05Srw56/V/0Y=
+  slack:
+    secure: meX0r1WuEG4DWS7GxvGZFXJxYSnVxXqoPsr7qDwbezLUXDZBQ62wlgMNSaQnEfCUWQdBUVZcljNrIzy0AlEAbLBXlbArnawYAXF0j70Nb6cQa5xXACk3addzhu26lATB+dX6Lt39kS/Cg9wJ5o/bdLq90qHp2ASKYCrWu8oq1Ds=
 deploy:
   provider: releases
   api_key:
@@ -11,5 +10,5 @@ deploy:
   skip_cleanup: true
   on:
     all_branches: true
-    tags: true 
+    tags: true
     repo: xebialabs-community/xld-jbossdm-restarter-plugin
