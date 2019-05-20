@@ -5,4 +5,4 @@
     FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
 
 -->
-${container.domain.home}/bin/jboss-cli.sh --connect --controller:${container.domain.adminHostAddress}:${container.domain.port} --command="/server-group=${container.name}:start-servers()"
+${container.domain.home}/bin/jboss-cli.sh --connect --controller=${container.domain.adminHostAddress}:${container.domain.port} --command="/server-group=${container.name}:start-servers()"
