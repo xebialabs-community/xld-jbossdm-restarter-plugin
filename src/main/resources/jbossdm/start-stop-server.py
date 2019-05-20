@@ -22,11 +22,6 @@ def containers():
 
 
 for container in containers():
-    if container.type in "jbossdm.ServerGroup":
-        extension="-server-group"
-    else
-        extension=""
-
     context.addStep(steps.os_script(
         description="Stopping server %s" % container.name,
         order=20,
