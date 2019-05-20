@@ -25,13 +25,23 @@ for container in containers():
     context.addStep(steps.os_script(
         description="Stopping server %s" % container.name,
         order=20,
-        script="jbossdm/stop"+extension,
+        script="jbossdm/stop",
         freemarker_context={'container': container},
         target_host=container.host)
+    )
+    context.addStep(steps.wait(
+        description="Wait for server %s stopping" % container.name,
+        order=21,
+        seconds=5)
     )
     context.addStep(steps.os_script(
         description="Starting server %s" % container.name,
         order=80,
-        script="jbossdm/start"+extension,
+        script="jbossdm/start",
         freemarker_context={'container': container},
         target_host=container.host))
+    context.addStep(steps.wait(
+        description="Wait for server %s starting" % container.name,
+        order=81,
+        seconds=5)
+    )
