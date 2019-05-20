@@ -6,7 +6,7 @@ deploy:
   provider: releases
   api_key:
     secure: AFNbIvLJNhLVPtWzSX+qhIE2yfU4O5Wde5IVYH/FeC1/nxqpM5r/B/8Dd5RPjJMbgdGa94uCTqdX2J73/p8eDVa2zt8TLMGpc7k84wekYbmSTeuSXbzKrDiIqDvntMuIe4xhdiRApsxYTugNq6ycFPajugrq7Iv3JTrecntEPD0=
-  file: build/libs/jbossdm-restarter-plugin-1.1.5.jar
+  file: build/libs//xld-jbossdm-restarter-plugin-1.1.6.jar
   skip_cleanup: true
   on:
     all_branches: true
