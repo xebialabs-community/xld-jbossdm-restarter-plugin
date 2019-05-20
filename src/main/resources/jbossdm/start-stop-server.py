@@ -27,7 +27,7 @@ for container in containers():
         order=20,
         script="jbossdm/stop",
         freemarker_context={'container': container},
-        target_host=container.host)
+        target_host=container.domain.host)
     )
     context.addStep(steps.wait(
         description="Wait for server %s stopping" % container.name,
@@ -39,7 +39,8 @@ for container in containers():
         order=80,
         script="jbossdm/start",
         freemarker_context={'container': container},
-        target_host=container.host))
+        target_host=container.domain.host))
+
     context.addStep(steps.wait(
         description="Wait for server %s starting" % container.name,
         order=81,
