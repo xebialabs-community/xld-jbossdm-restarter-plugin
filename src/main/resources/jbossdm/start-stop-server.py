@@ -6,6 +6,7 @@
 
 from java.util import HashSet
 
+
 def containers():
     result = HashSet()
     for _delta in deltas.deltas:
@@ -13,7 +14,9 @@ def containers():
         current_container = deployed.container
         if deployed.hasProperty('restartContainer'):
             restartContainer = deployed.restartContainer
-            if restartContainer and _delta.operation != "NOOP" and (current_container.type in ["jbossdm.Domain","jbossdm.StandaloneServer","jbossdm.Profile"]):
+            if restartContainer and _delta.operation != "NOOP" and (
+                    current_container.type in ["jbossdm.Domain", "jbossdm.ServerGroup", "jbossdm.StandaloneServer",
+                                               "jbossdm.Profile"]):
                 result.add(current_container)
     return result
 
