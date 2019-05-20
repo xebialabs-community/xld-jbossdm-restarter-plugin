@@ -22,16 +22,21 @@ def containers():
 
 
 for container in containers():
+    if container.type in "jbossdm.ServerGroup":
+        extension="-server-group"
+    else
+        extension=""
+
     context.addStep(steps.os_script(
         description="Stopping server %s" % container.name,
         order=20,
-        script="jbossdm/stop",
+        script="jbossdm/stop"+extension,
         freemarker_context={'container': container},
         target_host=container.host)
     )
     context.addStep(steps.os_script(
         description="Starting server %s" % container.name,
         order=80,
-        script="jbossdm/start",
+        script="jbossdm/start"+extension,
         freemarker_context={'container': container},
         target_host=container.host))
